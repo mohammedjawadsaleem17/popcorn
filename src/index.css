@@ -49,13 +49,58 @@ body {
     justify-content: center;
 }
 
-.box {
+/* .box {
     width: 42rem;
     max-width: 42rem;
+    height: 82rem;
     background-color: var(--color-background-500);
     border-radius: 0.9rem;
     overflow: scroll;
     position: relative;
+} */
+:root {
+    --color-background-500: #282c35; /* Adjust background color */
+    --color-scrollbar-thumb: #61dafb; /* Adjust thumb color */
+    --color-scrollbar-thumb-hover: #4fa3e8; /* Adjust thumb color on hover */
+    --color-scrollbar-track: #39424f; /* Adjust track color */
+}
+
+.box {
+    width: 42rem;
+    max-width: 42rem;
+    height: 82rem;
+    background-color: var(--color-background-500);
+    border-radius: 0.9rem;
+    overflow: scroll;
+    position: relative;
+
+    /* Custom scrollbar styles */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-track);
+    transition: scrollbar-color 0.3s ease; /* Smooth transition effect */
+}
+
+.box::-webkit-scrollbar {
+    width: 12px; /* Adjust as needed */
+}
+
+.box::-webkit-scrollbar-thumb {
+    background-color: var(--color-scrollbar-thumb);
+    border-radius: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.box::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-scrollbar-thumb-hover);
+}
+
+.box::-webkit-scrollbar-track {
+    background-color: var(--color-scrollbar-track);
+}
+
+/* Optional: Add a subtle box-shadow on hover for a more interactive feel */
+.box:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .loader {
